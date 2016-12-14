@@ -3,7 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Shopping.DemoApp", "Shopping.DemoApp\Shopping.DemoApp.shproj", "{88CF9DC0-53FD-4D2B-8FC5-98B48C1E53DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopping.DemoApp.iOS", "Shopping.DemoApp.iOS\Shopping.DemoApp.iOS.csproj", "{0ADA25B0-2CDF-4167-A39B-86F8CF81F964}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Shopping.DemoApp\Shopping.DemoApp.projitems*{0ada25b0-2cdf-4167-a39b-86f8cf81f964}*SharedItemsImports = 4
+		Shopping.DemoApp\Shopping.DemoApp.projitems*{88cf9dc0-53fd-4d2b-8fc5-98b48c1e53db}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhone = Debug|iPhone
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0ADA25B0-2CDF-4167-A39B-86F8CF81F964}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{0ADA25B0-2CDF-4167-A39B-86F8CF81F964}.Debug|iPhone.Build.0 = Debug|iPhone
+		{0ADA25B0-2CDF-4167-A39B-86F8CF81F964}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{0ADA25B0-2CDF-4167-A39B-86F8CF81F964}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{0ADA25B0-2CDF-4167-A39B-86F8CF81F964}.Release|iPhone.ActiveCfg = Release|iPhone
+		{0ADA25B0-2CDF-4167-A39B-86F8CF81F964}.Release|iPhone.Build.0 = Release|iPhone
+		{0ADA25B0-2CDF-4167-A39B-86F8CF81F964}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{0ADA25B0-2CDF-4167-A39B-86F8CF81F964}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
