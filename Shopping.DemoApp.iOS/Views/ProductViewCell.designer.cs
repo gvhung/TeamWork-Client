@@ -11,8 +11,8 @@ using UIKit;
 
 namespace Shopping.DemoApp.iOS
 {
-    [Register ("SaleItemViewCell")]
-    partial class SaleItemViewCell
+    [Register ("ProductViewCell")]
+    partial class ProductViewCell
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]

@@ -11,49 +11,49 @@ using Shopping.DemoApp.iOS.Extensions;
 
 namespace Shopping.DemoApp.iOS
 {
-    public partial class SaleItemViewCell : UICollectionViewCell
+    public partial class ProductViewCell : UICollectionViewCell
     {
-        public static readonly NSString Key = new NSString("SaleItemViewCell");
+        public static readonly NSString Key = new NSString("ProductViewCell");
         public static readonly UINib Nib;
 
 		public string ItemId { get; private set; }
 
-        static SaleItemViewCell()
+        static ProductViewCell()
         {
-            Nib = UINib.FromName("SaleItemViewCell", NSBundle.MainBundle);
+            Nib = UINib.FromName("ProductViewCell", NSBundle.MainBundle);
         }
 
-        protected SaleItemViewCell(IntPtr handle) : base(handle)
+        protected ProductViewCell(IntPtr handle) : base(handle)
         {
             // Note: this .ctor should not contain any initialization logic.
         }
 
-        public static SaleItemViewCell Create()
+        public static ProductViewCell Create()
         {
-            SaleItemViewCell cell = (SaleItemViewCell)Nib.Instantiate(null, null)[0];
+            ProductViewCell cell = (ProductViewCell)Nib.Instantiate(null, null)[0];
 
             return cell;
         }
 
-        public async void Bind(SaleItem saleItem)
+        public async void Bind(Product Product)
         {
-            await ItemImageView.BindImageViewAsync(saleItem);
+            await ItemImageView.BindImageViewAsync(Product);
 
-            ItemNameLabel.Text = !string.IsNullOrEmpty(saleItem.Name) ? saleItem.Name.ToUpperInvariant() : string.Empty;
-            ItemDescriptionLabel.Text = saleItem.Description;
+            ItemNameLabel.Text = !string.IsNullOrEmpty(Product.Name) ? Product.Name.ToUpperInvariant() : string.Empty;
+            ItemDescriptionLabel.Text = Product.Description;
 
             var smallAttributes = new UIStringAttributes
             {
                 Font = UIFont.FromName(ItemPriceLabel.Font.Name, 10f)
             };
 
-            string priceStr = "$" + Math.Round(saleItem.Price);
+            string priceStr = "$" + Math.Round(Product.Price);
             NSMutableAttributedString mutablePriceStr = new NSMutableAttributedString(priceStr);
 
             mutablePriceStr.SetAttributes(smallAttributes.Dictionary, new NSRange(0, 1));
 
             ItemPriceLabel.AttributedText = mutablePriceStr;
-			ItemId = saleItem.Id;
+			ItemId = Product.Id;
         }
     }
 }

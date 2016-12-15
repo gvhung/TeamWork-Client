@@ -37,25 +37,25 @@ namespace Shopping.DemoApp.iOS.Extensions
 		}
 
         public static async Task BindImageViewAsync(this UIImageView imageView, 
-                                                    SaleItem saleItem)
+                                                    Product Product)
         {
             // Manually uploaded items use Azure File sync
-            if (string.IsNullOrEmpty(saleItem.ImageUrl))
+            if (string.IsNullOrEmpty(Product.ImageUrl))
             {
-                await LoadImageAsync(saleItem, imageView);
+                await LoadImageAsync(Product, imageView);
             }
             // Default app images should have a public ImageUrl
             else
             {
-                var url = new NSUrl(saleItem.ImageUrl);
+                var url = new NSUrl(Product.ImageUrl);
                 imageView.SetImage(url);
             }
         }
 
-        private static async Task LoadImageAsync(SaleItem saleItem, 
+        private static async Task LoadImageAsync(Product Product, 
                                                  UIImageView imageView)
         {
-			string localFile = await FileHelper.GetLocalFilePathAsync(saleItem.Id);
+			string localFile = await FileHelper.GetLocalFilePathAsync(Product.Id);
 			var image = UIImage.FromFile(localFile);
 
 			NSUrl url = NSUrl.FromFilename(localFile);

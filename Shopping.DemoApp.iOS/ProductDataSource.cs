@@ -7,13 +7,13 @@ using UIKit;
 
 namespace Shopping.DemoApp.iOS
 {
-    public class SaleItemsDataSource : UICollectionViewSource
+    public class ProductDataSource : UICollectionViewSource
     {
-        public IEnumerable<SaleItem> Items { get; set; }
+        public IEnumerable<Product> Items { get; set; }
 
         public Action SellRequestedCallback { get; set; }
 
-		public Action<SaleItem> SaleItemSelectedCallback { get; set; }
+		public Action<Product> ProductelectedCallback { get; set; }
 
         public override nint NumberOfSections(UICollectionView collectionView)
         {
@@ -38,7 +38,7 @@ namespace Shopping.DemoApp.iOS
             }
             else
             {
-                SaleItemViewCell cell = collectionView.DequeueReusableCell(SaleItemViewCell.Key, indexPath) as SaleItemViewCell ?? SaleItemViewCell.Create();
+                ProductViewCell cell = collectionView.DequeueReusableCell(ProductViewCell.Key, indexPath) as ProductViewCell ?? ProductViewCell.Create();
 
                 cell.Bind(Items.ElementAt(indexPath.Row));
 
@@ -54,8 +54,8 @@ namespace Shopping.DemoApp.iOS
 			}
 			else if (indexPath.Section == 1)
 			{
-				SaleItem item = Items.ElementAt(indexPath.Row);
-				SaleItemSelectedCallback?.Invoke(item);
+				Product item = Items.ElementAt(indexPath.Row);
+				ProductelectedCallback?.Invoke(item);
 			}
         }
     }

@@ -7,7 +7,7 @@ using UIKit;
 
 namespace Shopping.DemoApp.iOS
 {
-    public partial class SaleItemsCollectionViewLayout : UICollectionViewLayout
+    public partial class ProductCollectionViewLayout : UICollectionViewLayout
     {
         private const int NumberOfColumns = 2;
 
@@ -19,7 +19,7 @@ namespace Shopping.DemoApp.iOS
         private nfloat[] columnsXOffset = new nfloat[NumberOfColumns];
         private nfloat[] columnsYOffset = new nfloat[NumberOfColumns];
 
-        public SaleItemsCollectionViewLayout (IntPtr handle) : base (handle)
+        public ProductCollectionViewLayout (IntPtr handle) : base (handle)
         {
         }
 

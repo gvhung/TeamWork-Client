@@ -9,7 +9,7 @@ namespace Shopping.DemoApp.iOS.Controllers
 {
     public partial class ItemDetailViewController : UIViewController
 	{
-		public SaleItem SaleItem { get; set; }
+		public Product Product { get; set; }
 
 		public ItemDetailViewController(IntPtr handle) : base(handle)
 		{
@@ -26,17 +26,17 @@ namespace Shopping.DemoApp.iOS.Controllers
 
         private async void LoadData()
 		{
-            await ItemImageView.BindImageViewAsync(SaleItem);
+            await ItemImageView.BindImageViewAsync(Product);
 
-            ItemTitleLabel.Text = (SaleItem.Name ?? string.Empty).ToUpper();
-			ItemDescriptionLabel.Text = SaleItem.Description;
+            ItemTitleLabel.Text = (Product.Name ?? string.Empty).ToUpper();
+			ItemDescriptionLabel.Text = Product.Description;
 
 			var smallAttributes = new UIStringAttributes
 			{
 				Font = UIFont.FromName(ItemPriceLabel.Font.Name, 20f)
 			};
 
-			string priceStr = "$" + SaleItem.Price.ToString("0.00");
+			string priceStr = "$" + Product.Price.ToString("0.00");
 			NSMutableAttributedString mutablePriceStr = new NSMutableAttributedString(priceStr);
 
 			mutablePriceStr.SetAttributes(smallAttributes.Dictionary, new NSRange(0, 1));
@@ -47,7 +47,7 @@ namespace Shopping.DemoApp.iOS.Controllers
 
         private async void OnBuyRequested(object sender, EventArgs e)
         {
-			await SaleItemDataService.Instance.BuySaleItemAsync(SaleItem);
+			await ProductDataService.Instance.BuyProductAsync(Product);
         }
     }
 }

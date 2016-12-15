@@ -11,8 +11,8 @@ using UIKit;
 
 namespace Shopping.DemoApp.iOS.Controllers
 {
-    [Register ("AddSaleItemViewController")]
-    partial class AddSaleItemViewController
+    [Register ("AddProductViewController")]
+    partial class AddProductViewController
     {
         [Outlet]
         UIKit.UIButton AddItemButton { get; set; }

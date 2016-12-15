@@ -16,13 +16,13 @@ namespace Shopping.DemoApp.iOS.Controllers
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UICollectionView SaleItemsCollectionView { get; set; }
+        UIKit.UICollectionView ProductCollectionView { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (SaleItemsCollectionView != null) {
-                SaleItemsCollectionView.Dispose ();
-                SaleItemsCollectionView = null;
+            if (ProductCollectionView != null) {
+                ProductCollectionView.Dispose ();
+                ProductCollectionView = null;
             }
         }
     }

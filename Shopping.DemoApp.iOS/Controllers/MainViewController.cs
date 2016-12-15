@@ -15,7 +15,7 @@ namespace Shopping.DemoApp.iOS.Controllers
 	public partial class MainViewController : UIViewController
     {
         private const int RatingAlertDelaySeconds = 2;
-        private SaleItemsDataSource saleItemsSource;
+        private ProductDataSource ProductSource;
 
         public MainViewController (IntPtr handle) : base (handle)
 		{
@@ -29,7 +29,7 @@ namespace Shopping.DemoApp.iOS.Controllers
             CustomizeNavigationBar();
 
             await InitializeCollectionView();
-            await LoadSaleItems();
+            await LoadProduct();
 
             //NSTimer.CreateScheduledTimer(TimeSpan.FromSeconds(RatingAlertDelaySeconds), OnRatingAlertScheduled);
         }
@@ -56,52 +56,52 @@ namespace Shopping.DemoApp.iOS.Controllers
             NavigationItem.RightBarButtonItem = 
                 new UIBarButtonItem(UIBarButtonSystemItem.Refresh, async delegate
             {
-                await LoadSaleItems();
+                await LoadProduct();
             });
         }
 
         private async Task InitializeCollectionView()
         {
-            UINib nib = UINib.FromName(SaleItemViewCell.Key, null);
-            SaleItemsCollectionView.RegisterNibForCell(nib, SaleItemViewCell.Key);
+            UINib nib = UINib.FromName(ProductViewCell.Key, null);
+            ProductCollectionView.RegisterNibForCell(nib, ProductViewCell.Key);
 
             nib = UINib.FromName(SellArticleButtonViewCell.Key, null);
-            SaleItemsCollectionView.RegisterNibForCell(nib, SellArticleButtonViewCell.Key);
+            ProductCollectionView.RegisterNibForCell(nib, SellArticleButtonViewCell.Key);
 
-            saleItemsSource = new SaleItemsDataSource();
-            saleItemsSource.SellRequestedCallback = OnSellRequested;
-			saleItemsSource.SaleItemSelectedCallback = OnSaleItemSelected;
-            SaleItemsCollectionView.Source = saleItemsSource;
+            ProductSource = new ProductDataSource();
+            ProductSource.SellRequestedCallback = OnSellRequested;
+			ProductSource.ProductelectedCallback = OnProductelected;
+            ProductCollectionView.Source = ProductSource;
 
-			await SaleItemDataService.Instance.Initialize();
+			await ProductDataService.Instance.Initialize();
 
 			// As each item image download may occur after its cell is loaded,
 			// we should reload it when that download is completed
-			SaleItemDataService.Instance.MobileService.EventManager
+			ProductDataService.Instance.MobileService.EventManager
 								   .Subscribe<FileDownloadedEvent>(file =>
 				{
-					SaleItemsCollectionView.BeginInvokeOnMainThread(() =>
+					ProductCollectionView.BeginInvokeOnMainThread(() =>
 					{
-						var targetCell = SaleItemsCollectionView.VisibleCells
-																.OfType<SaleItemViewCell>()
+						var targetCell = ProductCollectionView.VisibleCells
+																.OfType<ProductViewCell>()
 																.FirstOrDefault(c => c.ItemId == file.Name);
 
 						if (targetCell != null)
 						{
-							NSIndexPath path = SaleItemsCollectionView.IndexPathForCell(targetCell);
-							SaleItemsCollectionView.ReloadItems(new[] { path });
+							NSIndexPath path = ProductCollectionView.IndexPathForCell(targetCell);
+							ProductCollectionView.ReloadItems(new[] { path });
 						}
 					});
 				});
         }
 
-		private async Task LoadSaleItems()
+		private async Task LoadProduct()
         {
             UserDialogs.Instance.ShowLoading("Loading...");
 
-            IEnumerable<SaleItem> data = await SaleItemDataService.Instance.GetSaleItems();
-            saleItemsSource.Items = data;
-            SaleItemsCollectionView.ReloadData();
+            IEnumerable<Product> data = await ProductDataService.Instance.GetProduct();
+            ProductSource.Items = data;
+            ProductCollectionView.ReloadData();
 
             UserDialogs.Instance.HideLoading();
         }
@@ -127,15 +127,15 @@ namespace Shopping.DemoApp.iOS.Controllers
 
             //if (AuthenticationService.Instance.UserIsAuthenticated)
             {
-                UIViewController controller = Storyboard.InstantiateViewController(nameof(AddSaleItemViewController));
+                UIViewController controller = Storyboard.InstantiateViewController(nameof(AddProductViewController));
                 NavigationController.PushViewController(controller, true);
             }
         }
 
-		private void OnSaleItemSelected(SaleItem item)
+		private void OnProductelected(Product item)
 		{
 			ItemDetailViewController controller = Storyboard.InstantiateViewController(nameof(ItemDetailViewController)) as ItemDetailViewController;
-			controller.SaleItem = item;
+			controller.Product = item;
 
 			NavigationController.PushViewController(controller, true);
 		}

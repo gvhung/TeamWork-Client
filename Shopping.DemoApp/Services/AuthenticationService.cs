@@ -68,14 +68,14 @@
                 vc = vc.PresentedViewController;
             }
 
-            return SaleItemDataService.Instance.MobileService.LoginAsync(vc, provider);
+            return ProductDataService.Instance.MobileService.LoginAsync(vc, provider);
         }
 
 #elif __ANDROID__
 
         private Task<MobileServiceUser> LoginWithProviderAsync(MobileServiceAuthenticationProvider provider)
         {
-            return SaleItemDataService.Instance.MobileService.LoginAsync(Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity, provider);
+            return ProductDataService.Instance.MobileService.LoginAsync(Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity, provider);
         }
 
 #elif WINDOWS_UWP
@@ -83,7 +83,7 @@
         //// In UWP we need to be logged in to subscribe to push notifications
         private async Task<MobileServiceUser> LoginWithProviderAsync(MobileServiceAuthenticationProvider provider)
         {
-            var serviceUser = await SaleItemDataService.Instance.MobileService.LoginAsync(provider);
+            var serviceUser = await ProductDataService.Instance.MobileService.LoginAsync(provider);
 
             return serviceUser;
         }

@@ -212,14 +212,14 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Entitlements.plist" />
-    <InterfaceDefinition Include="Views\SaleItemViewCell.xib" />
+    <InterfaceDefinition Include="Views\ProductViewCell.xib" />
     <InterfaceDefinition Include="Views\SellArticleButtonViewCell.xib" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\AddSaleItemViewController.cs" />
-    <Compile Include="Controllers\AddSaleItemViewController.designer.cs">
-      <DependentUpon>AddSaleItemViewController.cs</DependentUpon>
+    <Compile Include="Controllers\AddProductViewController.cs" />
+    <Compile Include="Controllers\AddProductViewController.designer.cs">
+      <DependentUpon>AddProductViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\RatingMainViewController.cs" />
     <Compile Include="Controllers\RatingMainViewController.designer.cs">
@@ -241,9 +241,9 @@
     <Compile Include="Controllers\ItemDetailViewController.designer.cs">
       <DependentUpon>ItemDetailViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\SaleItemsCollectionViewLayout.cs" />
-    <Compile Include="Views\SaleItemsCollectionViewLayout.designer.cs">
-      <DependentUpon>SaleItemsCollectionViewLayout.cs</DependentUpon>
+    <Compile Include="Views\ProductCollectionViewLayout.cs" />
+    <Compile Include="Views\ProductCollectionViewLayout.designer.cs">
+      <DependentUpon>ProductCollectionViewLayout.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
@@ -251,10 +251,10 @@
     <Compile Include="Controllers\MainViewController.designer.cs">
       <DependentUpon>MainViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="SaleItemsDataSource.cs" />
-    <Compile Include="Views\SaleItemViewCell.cs" />
-    <Compile Include="Views\SaleItemViewCell.designer.cs">
-      <DependentUpon>SaleItemViewCell.cs</DependentUpon>
+    <Compile Include="ProductDataSource.cs" />
+    <Compile Include="Views\ProductViewCell.cs" />
+    <Compile Include="Views\ProductViewCell.designer.cs">
+      <DependentUpon>ProductViewCell.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\SellArticleButtonViewCell.cs" />
     <Compile Include="Views\SellArticleButtonViewCell.designer.cs">

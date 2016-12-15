@@ -13,12 +13,12 @@
     using System.IO;
     using System.Linq;
 
-    public class SaleItemDataService
+    public class ProductDataService
     {
-        private IMobileServiceSyncTable<SaleItem> saleItemsTable;
-        private static SaleItemDataService instance = new SaleItemDataService();
+        private IMobileServiceSyncTable<Product> ProductTable;
+        private static ProductDataService instance = new ProductDataService();
 
-        public static SaleItemDataService Instance
+        public static ProductDataService Instance
         {
             get
             {
@@ -28,7 +28,7 @@
 
         public MobileServiceClient MobileService { get; private set; }
 
-        private SaleItemDataService()
+        private ProductDataService()
         {
         }
 
@@ -43,34 +43,34 @@
 
             //setup our local sqlite store and intialize our table
             var store = new MobileServiceSQLiteStore(path);
-            store.DefineTable<SaleItem>();
+            store.DefineTable<Product>();
 
             //Get our sync table that will call out to azure
-            this.saleItemsTable = this.MobileService.GetSyncTable<SaleItem>();
+            this.ProductTable = this.MobileService.GetSyncTable<Product>();
 
             // Add images handler
-            this.MobileService.InitializeFileSyncContext(new ImagesFileSyncHandler(this.saleItemsTable), store);
+            this.MobileService.InitializeFileSyncContext(new ImagesFileSyncHandler(this.ProductTable), store);
 
             //await this.MobileService.SyncContext.InitializeAsync(store, StoreTrackingOptions.NotifyLocalAndServerOperations);
             await this.MobileService.SyncContext.InitializeAsync(store, StoreTrackingOptions.None);
 
         }
 
-        public async Task<IEnumerable<SaleItem>> GetSaleItems()
+        public async Task<IEnumerable<Product>> GetProduct()
         {
-            await this.SyncSaleItems();
+            await this.SyncProduct();
 
-            return await this.saleItemsTable.OrderByDescending(c => c.CreatedAt).ToEnumerableAsync();
+            return await this.ProductTable.OrderByDescending(c => c.CreatedAt).ToEnumerableAsync();
         }
 
-        public async Task SyncSaleItems()
+        public async Task SyncProduct()
         {
             try
             {
                 await MobileService.SyncContext.PushAsync();
-                await saleItemsTable.PushFileChangesAsync();
+                await ProductTable.PushFileChangesAsync();
 
-                await saleItemsTable.PullAsync("allSaleItems", this.saleItemsTable.CreateQuery());
+                await ProductTable.PullAsync("allProduct", this.ProductTable.CreateQuery());
             }
 
             catch (Exception e)
@@ -80,29 +80,29 @@
         }
 
 
-        public async Task AddItemAsync(SaleItem item, string imagePath)
+        public async Task AddItemAsync(Product item, string imagePath)
         {
-            await saleItemsTable.InsertAsync(item);
+            await ProductTable.InsertAsync(item);
 
-            string targetPath = await FileHelper.CopySaleItemFileAsync(item.Id, imagePath);
-            await saleItemsTable.AddFileAsync(item, Path.GetFileName(targetPath));
+            string targetPath = await FileHelper.CopyProductFileAsync(item.Id, imagePath);
+            await ProductTable.AddFileAsync(item, Path.GetFileName(targetPath));
 
-            await SyncSaleItems();
+            await SyncProduct();
         }
 
-        public async Task<MobileServiceFile> GetItemPhotoAsync(SaleItem item)
+        public async Task<MobileServiceFile> GetItemPhotoAsync(Product item)
         {
-            IEnumerable<MobileServiceFile> files = await this.saleItemsTable.GetFilesAsync(item);
+            IEnumerable<MobileServiceFile> files = await this.ProductTable.GetFilesAsync(item);
 
             return files.FirstOrDefault();
         }
 
         
-        public async Task BuySaleItemAsync(SaleItem item)
+        public async Task BuyProductAsync(Product item)
         {
             try
             {
-                bool buySucceeded = await this.MobileService.InvokeApiAsync<SaleItem, bool>("buy", item);
+                bool buySucceeded = await this.MobileService.InvokeApiAsync<Product, bool>("buy", item);
 
                 if (buySucceeded)
                 {

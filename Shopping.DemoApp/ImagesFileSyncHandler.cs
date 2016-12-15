@@ -1,10 +1,7 @@
 ﻿namespace Shopping.DemoApp
 {
-    using System;
-    using System.Diagnostics;
     using System.IO;
     using System.Threading.Tasks;
-    using Microsoft.WindowsAzure.MobileServices.Eventing;
     using Microsoft.WindowsAzure.MobileServices.Files;
     using Microsoft.WindowsAzure.MobileServices.Files.Metadata;
     using Microsoft.WindowsAzure.MobileServices.Files.Sync;
@@ -20,11 +17,11 @@
         private static object currentDownloadTaskLock = new object();
         private static Task currentDownloadTask = Task.FromResult(0);
 
-        private IMobileServiceSyncTable<SaleItem> saleItemsTable;
+        private IMobileServiceSyncTable<Product> ProductTable;
 
-        public ImagesFileSyncHandler(IMobileServiceSyncTable<SaleItem> table)
+        public ImagesFileSyncHandler(IMobileServiceSyncTable<Product> table)
         {
-            saleItemsTable = table;
+            ProductTable = table;
         }
 
         public async Task<IMobileServiceFileDataSource> GetDataSource(MobileServiceFileMetadata metadata)
@@ -65,9 +62,9 @@
 
             using (System.IO.Stream stream = File.Create(fullpath)) { }
 
-            await saleItemsTable.DownloadFileAsync(file, fullpath);
+            await ProductTable.DownloadFileAsync(file, fullpath);
 
-            await SaleItemDataService.Instance.MobileService.EventManager
+            await ProductDataService.Instance.MobileService.EventManager
                                      .PublishAsync(new FileDownloadedEvent { Name = file.ParentId });
         }
     }

@@ -13,7 +13,7 @@ using UIKit;
 
 namespace Shopping.DemoApp.iOS.Controllers
 {
-	public partial class AddSaleItemViewController : UIViewController
+	public partial class AddProductViewController : UIViewController
     {
 		private readonly string DefaultPriceText = default(decimal).ToString("0.00");
 
@@ -24,9 +24,9 @@ namespace Shopping.DemoApp.iOS.Controllers
 
 		private UIView lastResponder;
 		private MediaFile photoFile;
-		private SaleItem saleItem = new SaleItem();
+		private Product Product = new Product();
 
-        public AddSaleItemViewController (IntPtr handle) : base (handle)
+        public AddProductViewController (IntPtr handle) : base (handle)
 		{
         }
 
@@ -101,18 +101,18 @@ namespace Shopping.DemoApp.iOS.Controllers
 				return;
 			}
 
-			UserDialogs.Instance.ShowLoading("Submitting...");
+			UserDialogs.Instance.ShowLoading("Skickar...");
 
 			try
 			{
-				saleItem = new SaleItem
+				Product = new Product
 				{
 					Name = ItemNameTextField.Text,
 					Description = ItemDescriptionTextView.Text,
 					Price = price
 				};
 
-				await SaleItemDataService.Instance.AddItemAsync(saleItem, photoFile.Path);
+				await ProductDataService.Instance.AddItemAsync(Product, photoFile.Path);
 
 				UserDialogs.Instance.HideLoading();
 				NavigationController.PopViewController(true);
@@ -120,7 +120,7 @@ namespace Shopping.DemoApp.iOS.Controllers
 			catch
 			{
 				UserDialogs.Instance.HideLoading();
-				await UserDialogs.Instance.AlertAsync("An error ocurred");
+				await UserDialogs.Instance.AlertAsync("Ett fel har uppstått");
 			}
 		}
 

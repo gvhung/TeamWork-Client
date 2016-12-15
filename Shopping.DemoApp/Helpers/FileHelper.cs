@@ -9,7 +9,7 @@
 		private const string imagesFolder = "images";
 		private const string imageFileName = "photo.jpg";
 
-		public static async Task<string> CopySaleItemFileAsync(string itemId, string filePath)
+		public static async Task<string> CopyProductFileAsync(string itemId, string filePath)
 		{   
 			IFolder localStorage = FileSystem.Current.LocalStorage;
 

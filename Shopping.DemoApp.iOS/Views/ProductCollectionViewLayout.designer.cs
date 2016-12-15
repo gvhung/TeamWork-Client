@@ -11,8 +11,8 @@ using UIKit;
 
 namespace Shopping.DemoApp.iOS
 {
-    [Register ("SaleItemsCollectionViewLayout")]
-    partial class SaleItemsCollectionViewLayout
+    [Register ("ProductCollectionViewLayout")]
+    partial class ProductCollectionViewLayout
     {
         void ReleaseDesignerOutlets ()
         {
