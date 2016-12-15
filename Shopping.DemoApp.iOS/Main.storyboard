@@ -377,7 +377,7 @@
                                     <constraint firstAttribute="height" constant="50" id="AT4-PL-zWM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="ADD ITEM">
+                                <state key="normal" title="LÄGG TILL">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -388,7 +388,7 @@
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jrn-tH-EUw">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="550"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HOt-Vt-Orc" userLabel="Container">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HOt-Vt-Orc" userLabel="Container" misplaced="YES">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="483"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wns-8b-Pol" userLabel="AddPhotoContainer">
@@ -466,7 +466,7 @@
                                                             </mask>
                                                         </variation>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WHAT DO YOU WANT TO SELL?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHe-Cp-n0R" userLabel="ItemNameLabel">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHe-Cp-n0R" userLabel="ItemNameLabel" text="NAMN" misplaced="YES">
                                                         <rect key="frame" x="30" y="274" width="186" height="15"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                         <color key="textColor" red="0.039215686274509803" green="0.078431372549019607" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
@@ -502,27 +502,27 @@
                                                             <constraint firstAttribute="height" constant="1" id="FnQ-iH-Sxa"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WHAT IS THE PRICE?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8I-kc-OB4" userLabel="ItemPriceLabel">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRIS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8I-kc-OB4" userLabel="ItemPriceLabel" misplaced="YES">
                                                         <rect key="frame" x="30" y="443" width="125" height="15"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                         <color key="textColor" red="0.039215686270000001" green="0.078431372550000003" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" text="25.00" textAlignment="right" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="AcM-PZ-7hD" userLabel="ItemPriceTextView">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" text="25.00" textAlignment="right" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="AcM-PZ-7hD" userLabel="ItemPriceTextView" misplaced="YES">
                                                         <rect key="frame" x="482" y="426" width="88" height="36"/>
                                                         <color key="tintColor" red="0.84313725490000002" green="0.0" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="textColor" red="0.84313725490196079" green="0.0" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOW IS THE CONDITION?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ip-DR-BN7" userLabel="ItemDescriptionLabel">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BESKRIVNING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ip-DR-BN7" userLabel="ItemDescriptionLabel" misplaced="YES">
                                                         <rect key="frame" x="30" y="328" width="152" height="15"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                         <color key="textColor" red="0.039215686270000001" green="0.078431372550000003" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91Q-ht-jwg" userLabel="$">
-                                                        <rect key="frame" x="470" y="437" width="12" height="21"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91Q-ht-jwg" userLabel="$" misplaced="YES">
+                                                        <rect key="frame" x="432" y="434" width="42" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                         <color key="textColor" red="0.74901960784313726" green="0.0" blue="0.41960784313725491" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -645,7 +645,7 @@
                                     <constraint firstAttribute="height" constant="50" id="sL7-tR-uPg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="BUY">
+                                <state key="normal" title="KÖP">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -776,5 +776,9 @@
         <image name="icon_photo_pressed.png" width="236" height="236"/>
         <image name="star_empty.png" width="58" height="55"/>
         <image name="star_full.png" width="58" height="55"/>
+        <image name="triangle.png" width="64" height="32"/>
+        <image name="box_icon.png" width="45" height="52"/>
+        <image name="logo.png" width="320" height="44"/>
+        <image name="logo_splash.png" width="665" height="296"/>
     </resources>
 </document>

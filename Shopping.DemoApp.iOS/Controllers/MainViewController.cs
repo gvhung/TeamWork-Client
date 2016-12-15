@@ -123,7 +123,7 @@ namespace Shopping.DemoApp.iOS.Controllers
 
         private async void OnSellRequested()
         {
-			//await AuthenticationService.Instance.RequestLoginIfNecessary();
+			await AuthenticationService.Instance.RequestLoginIfNecessary();
 
             //if (AuthenticationService.Instance.UserIsAuthenticated)
             {
