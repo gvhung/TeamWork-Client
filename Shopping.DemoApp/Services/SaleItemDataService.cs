@@ -51,7 +51,8 @@
             // Add images handler
             this.MobileService.InitializeFileSyncContext(new ImagesFileSyncHandler(this.saleItemsTable), store);
 
-            await this.MobileService.SyncContext.InitializeAsync(store, StoreTrackingOptions.NotifyLocalAndServerOperations);
+            //await this.MobileService.SyncContext.InitializeAsync(store, StoreTrackingOptions.NotifyLocalAndServerOperations);
+            await this.MobileService.SyncContext.InitializeAsync(store, StoreTrackingOptions.None);
 
         }
 

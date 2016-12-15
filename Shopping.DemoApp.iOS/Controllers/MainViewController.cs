@@ -31,7 +31,7 @@ namespace Shopping.DemoApp.iOS.Controllers
             await InitializeCollectionView();
             await LoadSaleItems();
 
-            NSTimer.CreateScheduledTimer(TimeSpan.FromSeconds(RatingAlertDelaySeconds), OnRatingAlertScheduled);
+            //NSTimer.CreateScheduledTimer(TimeSpan.FromSeconds(RatingAlertDelaySeconds), OnRatingAlertScheduled);
         }
 
         public override void DidReceiveMemoryWarning ()
@@ -123,9 +123,9 @@ namespace Shopping.DemoApp.iOS.Controllers
 
         private async void OnSellRequested()
         {
-			await AuthenticationService.Instance.RequestLoginIfNecessary();
+			//await AuthenticationService.Instance.RequestLoginIfNecessary();
 
-            if (AuthenticationService.Instance.UserIsAuthenticated)
+            //if (AuthenticationService.Instance.UserIsAuthenticated)
             {
                 UIViewController controller = Storyboard.InstantiateViewController(nameof(AddSaleItemViewController));
                 NavigationController.PushViewController(controller, true);
