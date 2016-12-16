@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.WindowsAzure.MobileServices.Eventing;
 
-namespace Shopping.DemoApp.Events
+namespace TeamWork.Events
 {
     public class FileDownloadedEvent : IMobileServiceEvent
     {

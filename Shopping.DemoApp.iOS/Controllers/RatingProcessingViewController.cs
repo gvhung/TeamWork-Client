@@ -1,14 +1,14 @@
 using Acr.UserDialogs;
 using Foundation;
 using Microsoft.ProjectOxford.Emotion.Contract;
-using Shopping.DemoApp.Models;
-using Shopping.DemoApp.Services;
+using TeamWork.Models;
+using TeamWork.Services;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
 using UIKit;
 
-namespace Shopping.DemoApp.iOS.Controllers
+namespace TeamWork.iOS.Controllers
 {
     public partial class RatingProcessingViewController : UIViewController
     {

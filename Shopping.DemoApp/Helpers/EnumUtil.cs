@@ -1,4 +1,4 @@
-﻿namespace Shopping.DemoApp.Helpers
+﻿namespace TeamWork.Helpers
 {
     using System;
     using System.Collections.Generic;

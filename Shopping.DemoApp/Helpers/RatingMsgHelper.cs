@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Shopping.DemoApp.Helpers
+namespace TeamWork.Helpers
 {
     public class RatingMsgHelper
     {

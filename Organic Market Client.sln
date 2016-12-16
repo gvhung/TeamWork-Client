@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Shopping.DemoApp", "Shopping.DemoApp\Shopping.DemoApp.shproj", "{88CF9DC0-53FD-4D2B-8FC5-98B48C1E53DB}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "TeamWork.Shared", "Shopping.DemoApp\TeamWork.Shared.shproj", "{88CF9DC0-53FD-4D2B-8FC5-98B48C1E53DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopping.DemoApp.iOS", "Shopping.DemoApp.iOS\Shopping.DemoApp.iOS.csproj", "{0ADA25B0-2CDF-4167-A39B-86F8CF81F964}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamWork.iOS", "Shopping.DemoApp.iOS\TeamWork.iOS.csproj", "{0ADA25B0-2CDF-4167-A39B-86F8CF81F964}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution

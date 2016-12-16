@@ -1,7 +1,7 @@
 ﻿using System;
 using UIKit;
 
-namespace Shopping.DemoApp.iOS.Extensions
+namespace TeamWork.iOS.Extensions
 {
 	public static class UIViewControllerExtensions
 	{

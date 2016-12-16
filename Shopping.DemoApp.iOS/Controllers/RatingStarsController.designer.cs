@@ -9,7 +9,7 @@ using System;
 using System.CodeDom.Compiler;
 using UIKit;
 
-namespace Shopping.DemoApp.iOS.Controllers
+namespace TeamWork.iOS.Controllers
 {
     [Register ("RatingStarsController")]
     partial class RatingStarsController

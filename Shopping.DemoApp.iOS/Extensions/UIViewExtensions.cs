@@ -3,12 +3,12 @@ using CoreFoundation;
 using CoreGraphics;
 using Foundation;
 using SDWebImage;
-using Shopping.DemoApp.Events;
-using Shopping.DemoApp.Models;
-using Shopping.DemoApp.Services;
+using TeamWork.Events;
+using TeamWork.Models;
+using TeamWork.Services;
 using UIKit;
 
-namespace Shopping.DemoApp.iOS.Extensions
+namespace TeamWork.iOS.Extensions
 {
 	public static class UIViewExtensions
 	{

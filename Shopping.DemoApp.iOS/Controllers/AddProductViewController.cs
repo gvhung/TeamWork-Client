@@ -6,12 +6,12 @@ using CoreGraphics;
 using Foundation;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
-using Shopping.DemoApp.iOS.Extensions;
-using Shopping.DemoApp.Models;
-using Shopping.DemoApp.Services;
+using TeamWork.iOS.Extensions;
+using TeamWork.Models;
+using TeamWork.Services;
 using UIKit;
 
-namespace Shopping.DemoApp.iOS.Controllers
+namespace TeamWork.iOS.Controllers
 {
 	public partial class AddProductViewController : UIViewController
     {

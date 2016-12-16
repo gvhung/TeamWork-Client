@@ -1,15 +1,15 @@
 using Foundation;
 using SDWebImage;
-using Shopping.DemoApp.Models;
+using TeamWork.Models;
 using System;
 using System.Globalization;
 using UIKit;
 using System.Threading.Tasks;
-using Shopping.DemoApp.Services;
-using Shopping.DemoApp.Events;
-using Shopping.DemoApp.iOS.Extensions;
+using TeamWork.Services;
+using TeamWork.Events;
+using TeamWork.iOS.Extensions;
 
-namespace Shopping.DemoApp.iOS
+namespace TeamWork.iOS
 {
     public partial class ProductViewCell : UICollectionViewCell
     {

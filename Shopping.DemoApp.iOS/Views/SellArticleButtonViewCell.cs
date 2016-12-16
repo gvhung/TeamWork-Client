@@ -2,7 +2,7 @@ using Foundation;
 using System;
 using UIKit;
 
-namespace Shopping.DemoApp.iOS
+namespace TeamWork.iOS
 {
     public partial class SellArticleButtonViewCell : UICollectionViewCell
     {

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UIKit;
 
-namespace Shopping.DemoApp.iOS
+namespace TeamWork.iOS
 {
     public partial class ProductCollectionViewLayout : UICollectionViewLayout
     {

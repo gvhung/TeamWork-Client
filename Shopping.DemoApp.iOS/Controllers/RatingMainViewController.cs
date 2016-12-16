@@ -1,10 +1,10 @@
 using System;
 using System.Linq;
 using Foundation;
-using Shopping.DemoApp.iOS.Extensions;
+using TeamWork.iOS.Extensions;
 using UIKit;
 
-namespace Shopping.DemoApp.iOS.Controllers
+namespace TeamWork.iOS.Controllers
 {
     public partial class RatingMainViewController : UITabBarController
     {

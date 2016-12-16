@@ -9,7 +9,7 @@ using System;
 using System.CodeDom.Compiler;
 using UIKit;
 
-namespace Shopping.DemoApp.iOS
+namespace TeamWork.iOS
 {
     [Register ("ProductCollectionViewLayout")]
     partial class ProductCollectionViewLayout

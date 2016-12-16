@@ -2,7 +2,7 @@
 // <copyright file="Dialog.cs" company="PlaceholderCompany">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
-namespace Shopping.DemoApp.Helpers
+namespace TeamWork.Helpers
 #pragma warning restore SA1652 // Enable XML documentation output
 {
     using System;

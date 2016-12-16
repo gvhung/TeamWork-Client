@@ -1,4 +1,4 @@
-﻿namespace Shopping.DemoApp
+﻿namespace TeamWork
 {
     using Acr.UserDialogs;
     using Microsoft.WindowsAzure.MobileServices;

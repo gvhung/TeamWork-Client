@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Shopping.DemoApp.Models
+namespace TeamWork.Models
 {
     public class RatingText
     {

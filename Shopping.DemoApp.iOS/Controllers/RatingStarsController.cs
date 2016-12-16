@@ -2,7 +2,7 @@ using CoreGraphics;
 using System;
 using UIKit;
 
-namespace Shopping.DemoApp.iOS.Controllers
+namespace TeamWork.iOS.Controllers
 {
     public partial class RatingStarsController : UIViewController
     {

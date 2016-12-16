@@ -1,4 +1,4 @@
-﻿namespace Shopping.DemoApp.Models
+﻿namespace TeamWork.Models
 {
     using System;
 

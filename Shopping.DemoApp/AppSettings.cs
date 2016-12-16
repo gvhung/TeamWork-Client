@@ -1,4 +1,4 @@
-﻿namespace Shopping.DemoApp
+﻿namespace TeamWork
 {
     public static class AppSettings
     {

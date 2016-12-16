@@ -1,11 +1,11 @@
 using System;
 using Foundation;
-using Shopping.DemoApp.iOS.Extensions;
-using Shopping.DemoApp.Models;
-using Shopping.DemoApp.Services;
+using TeamWork.iOS.Extensions;
+using TeamWork.Models;
+using TeamWork.Services;
 using UIKit;
 
-namespace Shopping.DemoApp.iOS.Controllers
+namespace TeamWork.iOS.Controllers
 {
     public partial class ItemDetailViewController : UIViewController
 	{

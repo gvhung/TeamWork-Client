@@ -1,4 +1,4 @@
-﻿namespace Shopping.DemoApp
+﻿namespace TeamWork
 {
     using System.IO;
     using System.Threading.Tasks;
@@ -7,9 +7,9 @@
     using Microsoft.WindowsAzure.MobileServices.Files.Sync;
     using Microsoft.WindowsAzure.MobileServices.Sync;
     using PCLStorage;
-    using Shopping.DemoApp.Events;
-    using Shopping.DemoApp.Models;
-    using Shopping.DemoApp.Services;
+    using TeamWork.Events;
+    using TeamWork.Models;
+    using TeamWork.Services;
 
 
     public class ImagesFileSyncHandler : IFileSyncHandler

@@ -4,13 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Acr.UserDialogs;
 using Foundation;
-using Shopping.DemoApp.Events;
-using Shopping.DemoApp.iOS.Extensions;
-using Shopping.DemoApp.Models;
-using Shopping.DemoApp.Services;
+using TeamWork.Events;
+using TeamWork.iOS.Extensions;
+using TeamWork.Models;
+using TeamWork.Services;
 using UIKit;
 
-namespace Shopping.DemoApp.iOS.Controllers
+namespace TeamWork.iOS.Controllers
 {
 	public partial class MainViewController : UIViewController
     {

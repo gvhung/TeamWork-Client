@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace Shopping.DemoApp.iOS
+namespace TeamWork.iOS
 {
 	public class Application
 	{

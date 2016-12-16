@@ -1,4 +1,4 @@
-﻿namespace Shopping.DemoApp
+﻿namespace TeamWork
 {
 	using System.IO;
 	using System.Threading.Tasks;

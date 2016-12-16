@@ -1,10 +1,10 @@
-﻿namespace Shopping.DemoApp.Services
+﻿namespace TeamWork.Services
 {
     using Acr.UserDialogs;
     using Microsoft.WindowsAzure.MobileServices;
     using Microsoft.WindowsAzure.MobileServices.SQLiteStore;
     using Microsoft.WindowsAzure.MobileServices.Sync;
-    using Shopping.DemoApp.Models;
+    using TeamWork.Models;
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using UIKit;
 
-namespace Shopping.DemoApp.iOS.Controllers
+namespace TeamWork.iOS.Controllers
 {
     public partial class RatingStreamingViewController : UIViewController
     {
