@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+    </dependencies>
+    <scenes/>
+    <resources>
+        <image name="triangle.png" width="64" height="32"/>
+        <image name="close.png" width="38" height="38"/>
+        <image name="box_icon.png" width="45" height="52"/>
+        <image name="icon_photo_pressed.png" width="236" height="236"/>
+        <image name="icon_photo.png" width="236" height="236"/>
+        <image name="facde_guide.png" width="519" height="404"/>
+        <image name="logo.png" width="320" height="44"/>
+        <image name="star_full.png" width="58" height="55"/>
+        <image name="star_empty.png" width="58" height="55"/>
+        <image name="logo_splash.png" width="665" height="296"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedScreenMetrics key="destination" type="retina47"/>
+    </simulatedMetricsContainer>
+</document>

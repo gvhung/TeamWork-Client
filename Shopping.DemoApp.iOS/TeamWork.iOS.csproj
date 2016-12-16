@@ -202,6 +202,7 @@
     <InterfaceDefinition Include="Main.storyboard">
       <SubType>Designer</SubType>
     </InterfaceDefinition>
+    <InterfaceDefinition Include="TeamWork.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
