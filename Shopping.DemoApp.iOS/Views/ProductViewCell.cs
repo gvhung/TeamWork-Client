@@ -39,7 +39,7 @@ namespace TeamWork.iOS
         {
             await ItemImageView.BindImageViewAsync(Product);
 
-            ItemNameLabel.Text = !string.IsNullOrEmpty(Product.Name) ? Product.Name.ToUpperInvariant() : string.Empty;
+            ItemNameLabel.Text = !string.IsNullOrEmpty(Product.Name) ? Product.Supplier.Name.ToUpperInvariant() : string.Empty;
             ItemDescriptionLabel.Text = Product.Description;
 
             var smallAttributes = new UIStringAttributes
