@@ -7,11 +7,11 @@ using UIKit;
 
 namespace TeamWork.iOS.Controllers
 {
-    public partial class ItemDetailViewController : UIViewController
+    public partial class ProductDetailViewController : UIViewController
 	{
 		public Product Product { get; set; }
 
-		public ItemDetailViewController(IntPtr handle) : base(handle)
+		public ProductDetailViewController(IntPtr handle) : base(handle)
 		{
 		}
 
@@ -21,7 +21,7 @@ namespace TeamWork.iOS.Controllers
 			this.AddDefaultNavigationTitle();
 
 			LoadData();
-            BuyButton.TouchUpInside += OnBuyRequested;
+            BuyButton.TouchUpInside += OnStartSaleRequested;
 		}
 
         private async void LoadData()
@@ -45,7 +45,7 @@ namespace TeamWork.iOS.Controllers
 			ItemPriceLabel.AttributedText = mutablePriceStr;
         }
 
-        private async void OnBuyRequested(object sender, EventArgs e)
+        private async void OnStartSaleRequested(object sender, EventArgs e)
         {
 			await ProductDataService.Instance.StartSale(Product);
         }

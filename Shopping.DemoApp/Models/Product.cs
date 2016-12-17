@@ -1,6 +1,7 @@
 ﻿namespace TeamWork.Models
 {
     using System;
+    using System.Collections.Generic;
 
     public class Product
     {
@@ -17,5 +18,6 @@
         public string ImageUrl { get; set; }
 
         public Supplier  Supplier { get; set; }
+        public virtual ICollection<OrderItem> OrderItems { get; set; }
     }
 }

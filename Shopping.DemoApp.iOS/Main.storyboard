@@ -629,7 +629,7 @@
         <!--Item Detail View Controller-->
         <scene sceneID="1035">
             <objects>
-                <viewController storyboardIdentifier="ItemDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1036" customClass="ItemDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProductDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1036" customClass="ProductDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1033"/>
                         <viewControllerLayoutGuide type="bottom" id="1034"/>

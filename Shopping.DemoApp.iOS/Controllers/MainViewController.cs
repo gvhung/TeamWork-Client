@@ -125,8 +125,8 @@ namespace TeamWork.iOS.Controllers
         {
 			await AuthenticationService.Instance.RequestLoginIfNecessary();
 
-            //if (AuthenticationService.Instance.UserIsAuthenticated)
-            {
+            if (AuthenticationService.Instance.UserIsAuthenticated)
+            {                
                 UIViewController controller = Storyboard.InstantiateViewController(nameof(AddProductViewController));
                 NavigationController.PushViewController(controller, true);
             }
@@ -134,7 +134,7 @@ namespace TeamWork.iOS.Controllers
 
 		private void OnProductelected(Product item)
 		{
-			ItemDetailViewController controller = Storyboard.InstantiateViewController(nameof(ItemDetailViewController)) as ItemDetailViewController;
+			ProductDetailViewController controller = Storyboard.InstantiateViewController(nameof(ProductDetailViewController)) as ProductDetailViewController;
 			controller.Product = item;
 
 			NavigationController.PushViewController(controller, true);

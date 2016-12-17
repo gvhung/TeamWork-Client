@@ -237,9 +237,9 @@
     <Compile Include="Controllers\RatingStreamingViewController.designer.cs">
       <DependentUpon>RatingStreamingViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\ItemDetailViewController.cs" />
-    <Compile Include="Controllers\ItemDetailViewController.designer.cs">
-      <DependentUpon>ItemDetailViewController.cs</DependentUpon>
+    <Compile Include="Controllers\ProductDetailViewController.cs" />
+    <Compile Include="Controllers\ProductDetailViewController.designer.cs">
+      <DependentUpon>ProductDetailViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ProductCollectionViewLayout.cs" />
     <Compile Include="Views\ProductCollectionViewLayout.designer.cs">
@@ -380,6 +380,9 @@
     <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-App-83.5x83.5%402x.png">
       <InProject>false</InProject>
     </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="..\Shopping.DemoApp\Shopping.DemoApp.projitems" Label="Shared" Condition="Exists('..\Shopping.DemoApp\Shopping.DemoApp.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

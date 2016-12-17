@@ -1,4 +1,4 @@
-// WARNING
+﻿// WARNING
 //
 // This file has been generated automatically by Xamarin Studio from the outlets and
 // actions declared in your storyboard file.
@@ -11,8 +11,8 @@ using UIKit;
 
 namespace TeamWork.iOS.Controllers
 {
-    [Register ("ItemDetailViewController")]
-    partial class ItemDetailViewController
+    [Register ("ProductDetailViewController")]
+    partial class ProductDetailViewController
     {
         [Outlet]
         UIKit.UIButton BuyButton { get; set; }
