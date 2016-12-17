@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleIdentifier</key>
-	<string>shopping.demo.app</string>
+	<string>teamwork.app</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
@@ -52,6 +52,6 @@
 	<key>NSMicrophoneUsageDescription</key>
 	<string>This app needs access to microphone.</string>
 	<key>CFBundleName</key>
-	<string>Bondgården</string>
+	<string>TeamWork</string>
 </dict>
 </plist>
