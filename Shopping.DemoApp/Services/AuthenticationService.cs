@@ -12,12 +12,25 @@
         private static AuthenticationService instance = new AuthenticationService();
 
         public bool UserIsAuthenticated { get; private set; }
-
+        MobileServiceUser mobileUser = null;
         public static AuthenticationService Instance
         {
             get
             {
                 return instance;
+            }
+        }
+
+        public MobileServiceUser User
+        {
+            get
+            {
+                return mobileUser;
+            }
+
+            set
+            {
+                mobileUser = value;
             }
         }
 
@@ -33,7 +46,7 @@
 
                 try
                 {
-                    MobileServiceUser mobileUser = null;
+                    
                     switch (result)
                     {
                         case "Facebook":
