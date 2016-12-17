@@ -98,15 +98,15 @@
         }
 
         
-        public async Task BuyProductAsync(Product item)
+        public async Task StartSale(Product item)
         {
             try
             {
-                bool buySucceeded = await this.MobileService.InvokeApiAsync<Product, bool>("buy", item);
+                bool succeeded = true;//await this.MobileService.InvokeApiAsync<Product, bool>("buy", item);
 
-                if (buySucceeded)
+                if (succeeded)
                 {
-                    await UserDialogs.Instance.AlertAsync("Thanks for buying this item");
+                    await UserDialogs.Instance.AlertAsync("Underbart! Nu drar vi igång försäljningen!");
                 }
             }
 

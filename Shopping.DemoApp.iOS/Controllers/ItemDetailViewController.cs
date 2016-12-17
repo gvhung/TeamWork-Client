@@ -47,7 +47,7 @@ namespace TeamWork.iOS.Controllers
 
         private async void OnBuyRequested(object sender, EventArgs e)
         {
-			await ProductDataService.Instance.BuyProductAsync(Product);
+			await ProductDataService.Instance.StartSale(Product);
         }
     }
 }

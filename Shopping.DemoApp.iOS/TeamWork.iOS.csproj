@@ -202,7 +202,6 @@
     <InterfaceDefinition Include="Main.storyboard">
       <SubType>Designer</SubType>
     </InterfaceDefinition>
-    <InterfaceDefinition Include="TeamWork.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -252,7 +251,7 @@
     <Compile Include="Controllers\MainViewController.designer.cs">
       <DependentUpon>MainViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductDataSource.cs" />
+    <Compile Include="DataSources\ProductDataSource.cs" />
     <Compile Include="Views\ProductViewCell.cs" />
     <Compile Include="Views\ProductViewCell.designer.cs">
       <DependentUpon>ProductViewCell.cs</DependentUpon>
