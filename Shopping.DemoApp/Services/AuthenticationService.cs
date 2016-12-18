@@ -36,11 +36,11 @@
         {
         }
 
-        public async Task<bool> RequestLoginIfNecessary()
+        public async Task<bool> RequestLoginIfNecessary(string message = "För att kunna göra det här måste du vara inloggad")
         {
             if (!UserIsAuthenticated)
             {
-                string result = await UserDialogs.Instance.ActionSheetAsync("För att kunna göra det här måste du vara inloggad", "Avbryt", null, buttons: new[] { "Facebook" });
+                string result = await UserDialogs.Instance.ActionSheetAsync(message, "Avbryt", null, buttons: new[] { "Facebook" });
 
                 try
                 {

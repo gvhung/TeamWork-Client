@@ -19,10 +19,24 @@ namespace TeamWork.iOS.Controllers
 		{
 			base.ViewDidLoad();
 			this.AddDefaultNavigationTitle();
+            CustomizeNavigationBar();
 
-			LoadData();
+
+            LoadData();
             BuyButton.TouchUpInside += OnStartSaleRequested;
 		}
+
+        private void CustomizeNavigationBar()
+        {
+            if (AuthenticationService.Instance.UserIsAuthenticated)
+            {
+                NavigationItem.RightBarButtonItem =
+                new UIBarButtonItem(UIBarButtonSystemItem.Edit, delegate
+                {
+                    LoadData();
+                });
+            }
+        }
 
         private async void LoadData()
 		{
@@ -47,7 +61,14 @@ namespace TeamWork.iOS.Controllers
 
         private async void OnStartSaleRequested(object sender, EventArgs e)
         {
-			await ProductDataService.Instance.StartSale(Product);
+            if (AuthenticationService.Instance.UserIsAuthenticated)
+            {
+                await ProductDataService.Instance.StartSale(Product);
+            }
+            else
+            {
+                await AuthenticationService.Instance.RequestLoginIfNecessary("För att kunna starta försäljning måste du vara inloggad");
+            }           
         }
     }
 }

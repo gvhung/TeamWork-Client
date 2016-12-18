@@ -53,7 +53,7 @@ namespace TeamWork.iOS.Controllers
 				ForegroundColor = UIColor.White
 			};
 
-            NavigationItem.RightBarButtonItem = 
+            NavigationItem.RightBarButtonItem =
                 new UIBarButtonItem(UIBarButtonSystemItem.Refresh, async delegate
             {
                 await LoadProduct();
