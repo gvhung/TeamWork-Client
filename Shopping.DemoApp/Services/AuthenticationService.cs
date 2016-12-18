@@ -62,7 +62,8 @@
                     Debug.WriteLine(ex);
                 }
             }
-            await UserAccountDataService.Instance.CreateAccountIfNotExists(mobileUser);
+			if(mobileUser !=null)
+            	await UserAccountDataService.Instance.CreateAccountIfNotExists(mobileUser);
             return UserIsAuthenticated;
         }
 
