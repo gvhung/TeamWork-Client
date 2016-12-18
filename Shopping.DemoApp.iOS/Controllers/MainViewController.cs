@@ -51,13 +51,45 @@ namespace TeamWork.iOS.Controllers
 			NavigationController.NavigationBar.TitleTextAttributes = new UIStringAttributes()
 			{
 				ForegroundColor = UIColor.White
-			};
+			};          
 
-            NavigationItem.RightBarButtonItem =
-                new UIBarButtonItem(UIBarButtonSystemItem.Refresh, async delegate
+            var refreshButton = new UIBarButtonItem(UIBarButtonSystemItem.Refresh, async delegate
             {
                 await LoadProduct();
             });
+
+            var spacer = new UIBarButtonItem(UIBarButtonSystemItem.FlexibleSpace) { Width = 50 };
+            if (AuthenticationService.Instance.UserIsAuthenticated)
+            {
+                var pauseButton = new UIBarButtonItem(UIBarButtonSystemItem.Camera, async delegate
+                {
+                    bool confirmed = await UserDialogs.Instance.ConfirmAsync("Time to rate the app! We'll calculate the score based on your smile.", okText: "Let's do it!");
+
+                    if (confirmed)
+                    {
+                        UIViewController controller = Storyboard.InstantiateViewController(nameof(RatingMainViewController));
+                        NavigationController.PushViewController(controller, true);
+                    }
+
+                });
+                this.SetToolbarItems(new UIBarButtonItem[] {spacer, pauseButton}, false);
+            }
+            else
+            {
+                var pauseButton = new UIBarButtonItem(UIBarButtonSystemItem.Action, async delegate
+                {
+                    bool confirmed = await UserDialogs.Instance.ConfirmAsync("Logga ut:).", okText: "Let's do it!");
+                    if (confirmed)
+                        AuthenticationService.Instance.LogOut();
+
+                });
+                this.SetToolbarItems(new UIBarButtonItem[] { spacer, pauseButton }, false);
+            }
+
+            NavigationItem.RightBarButtonItem = refreshButton;
+
+            this.NavigationController.ToolbarHidden = false;
+
         }
 
         private async Task InitializeCollectionView()
@@ -123,7 +155,7 @@ namespace TeamWork.iOS.Controllers
 
         private async void OnSellRequested()
         {
-			await AuthenticationService.Instance.RequestLoginIfNecessary();
+			var login = await AuthenticationService.Instance.RequestLoginIfNecessary();
 
             if (AuthenticationService.Instance.UserIsAuthenticated)
             {                

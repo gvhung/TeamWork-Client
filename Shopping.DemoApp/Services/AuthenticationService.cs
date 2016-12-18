@@ -83,6 +83,11 @@
             return ProductDataService.Instance.MobileService.LoginAsync(vc, provider);
         }
 
+        internal void LogOut()
+        {
+            ProductDataService.Instance.MobileService.LogoutAsync();
+        }
+
 #elif __ANDROID__
 
         private Task<MobileServiceUser> LoginWithProviderAsync(MobileServiceAuthenticationProvider provider)
