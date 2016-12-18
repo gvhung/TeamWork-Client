@@ -13,11 +13,13 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Dialog.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\EnumUtil.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\OrderItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\UserAccount.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Supplier.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\RatingText.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\RatingMsgHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Product.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\EmotionService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\UserAccountDataService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\ProductDataService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\AuthenticationService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ImagesFileSyncHandler.cs" />

@@ -2,6 +2,7 @@
 {
     using Acr.UserDialogs;
     using Microsoft.WindowsAzure.MobileServices;
+    using Models;
     using Services;
     using System;
     using System.Diagnostics;
@@ -21,17 +22,14 @@
             }
         }
 
-        public MobileServiceUser User
+        public UserAccount User
         {
             get
             {
-                return mobileUser;
+                UserAccount account = new UserAccount();
+                return account;
             }
-
-            set
-            {
-                mobileUser = value;
-            }
+            
         }
 
         private AuthenticationService()
@@ -42,7 +40,7 @@
         {
             if (!UserIsAuthenticated)
             {
-                string result = await UserDialogs.Instance.ActionSheetAsync("Want to sell something? Please, sign-in first", "Cancel", null, buttons: new[] { "Facebook", "Twitter" });
+                string result = await UserDialogs.Instance.ActionSheetAsync("För att kunna göra det här måste du vara inloggad", "Avbryt", null, buttons: new[] { "Facebook" });
 
                 try
                 {
@@ -64,7 +62,7 @@
                     Debug.WriteLine(ex);
                 }
             }
-
+            await UserAccountDataService.Instance.CreateAccountIfNotExists(mobileUser);
             return UserIsAuthenticated;
         }
 
