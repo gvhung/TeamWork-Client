@@ -9,10 +9,10 @@ using System;
 using System.CodeDom.Compiler;
 using UIKit;
 
-namespace TeamWork.iOS
+namespace Shopping.DemoApp.iOS
 {
-    [Register ("ProductCollectionViewLayout")]
-    partial class ProductCollectionViewLayout
+    [Register ("MainTabController")]
+    partial class MainTabController
     {
         void ReleaseDesignerOutlets ()
         {
