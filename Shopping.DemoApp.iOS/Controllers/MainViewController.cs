@@ -97,8 +97,8 @@ namespace TeamWork.iOS.Controllers
             UINib nib = UINib.FromName(ProductViewCell.Key, null);
             ProductCollectionView.RegisterNibForCell(nib, ProductViewCell.Key);
 
-            nib = UINib.FromName(SellArticleButtonViewCell.Key, null);
-            ProductCollectionView.RegisterNibForCell(nib, SellArticleButtonViewCell.Key);
+            //nib = UINib.FromName(SellArticleButtonViewCell.Key, null);
+            //ProductCollectionView.RegisterNibForCell(nib, SellArticleButtonViewCell.Key);
 
             ProductSource = new ProductDataSource();
             ProductSource.SellRequestedCallback = OnSellRequested;

@@ -9,7 +9,7 @@ namespace TeamWork.iOS
 {
     public partial class ProductCollectionViewLayout : UICollectionViewLayout
     {
-        private const int NumberOfColumns = 2;
+        private const int NumberOfColumns = 1;
 
         private List<UICollectionViewLayoutAttributes> calculatedAttributes = new List<UICollectionViewLayoutAttributes>();
         private nfloat contentWidth = 0f;
@@ -42,11 +42,11 @@ namespace TeamWork.iOS
                 columnsYOffset[i] = 0;
             }
 
-            UICollectionViewLayoutAttributes attribute1 = UICollectionViewLayoutAttributes.CreateForCell(NSIndexPath.FromItemSection(0, 0));
-            attribute1.Frame = new CGRect(columnsXOffset[1], 0, columnWidth, buttonHeight);
-            calculatedAttributes.Add(attribute1);
+            //UICollectionViewLayoutAttributes attribute1 = UICollectionViewLayoutAttributes.CreateForCell(NSIndexPath.FromItemSection(0, 0));
+            //attribute1.Frame = new CGRect(columnsXOffset[1], 0, columnWidth, buttonHeight);
+            //calculatedAttributes.Add(attribute1);
 
-            columnsYOffset[1] = buttonHeight; // Second column has a vertical offset (due to sell button height)
+            //columnsYOffset[1] = buttonHeight; // Second column has a vertical offset (due to sell button height)
 
             int column = 0;
             for (int i = 0; i < CollectionView.NumberOfItemsInSection(1); i++)
