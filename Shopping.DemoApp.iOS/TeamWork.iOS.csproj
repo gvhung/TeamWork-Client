@@ -210,7 +210,8 @@
       <InProject>false</InProject>
     </ImageAsset>
     <None Include="Info.plist">
-      <SubType>Designer</SubType>
+      <SubType>
+      </SubType>
     </None>
     <None Include="Entitlements.plist" />
     <InterfaceDefinition Include="Views\ProductViewCell.xib" />

@@ -1,7 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="X5k-f2-b5h">
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="X5k-f2-b5h">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,19 +19,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="45" translatesAutoresizingMaskIntoConstraints="NO" image="logo_splash.png">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="facde_guide.png" translatesAutoresizingMaskIntoConstraints="NO" id="45" misplaced="YES">
                                 <rect key="frame" x="60" y="16" width="480" height="568"/>
-                                <rect key="contentStretch" x="0.0" y="0.0" width="1" height="1"/>
                                 <constraints>
-                                    <constraint id="50" firstAttribute="width" secondItem="45" secondAttribute="height" multiplier="125:148"/>
+                                    <constraint firstAttribute="width" secondItem="45" secondAttribute="height" multiplier="125:148" id="50"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.00392156862745098" green="0.12156862745098039" blue="0.30980392156862746" alpha="1"/>
+                        <color key="backgroundColor" red="0.0039215686274509803" green="0.12156862745098039" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint id="46" firstItem="yd7-JS-zBw" firstAttribute="centerY" secondItem="45" secondAttribute="centerY"/>
-                            <constraint id="47" firstItem="yd7-JS-zBw" firstAttribute="centerX" secondItem="45" secondAttribute="centerX"/>
-                            <constraint id="49" firstItem="45" firstAttribute="width" secondItem="yd7-JS-zBw" secondAttribute="width" multiplier="0.6"/>
+                            <constraint firstAttribute="centerY" secondItem="45" secondAttribute="centerY" id="46"/>
+                            <constraint firstAttribute="centerX" secondItem="45" secondAttribute="centerX" id="47"/>
+                            <constraint firstItem="45" firstAttribute="width" secondItem="yd7-JS-zBw" secondAttribute="width" multiplier="0.6" id="49"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -38,7 +40,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="logo_splash.png" width="665" height="296"/>
         <image name="box_icon.png" width="45" height="52"/>
+        <image name="close.png" width="38" height="38"/>
         <image name="facde_guide.png" width="519" height="404"/>
         <image name="icon_photo.png" width="236" height="236"/>
         <image name="icon_photo_pressed.png" width="236" height="236"/>
@@ -46,10 +50,6 @@
         <image name="star_empty.png" width="58" height="55"/>
         <image name="star_full.png" width="58" height="55"/>
         <image name="triangle.png" width="64" height="32"/>
-        <image name="logo_splash.png" width="665" height="296"/>
     </resources>
-    <color key="tintColor" colorSpace="calibratedRGB" red="0.00392156862745098" green="0.12156862745098039" blue="0.30980392156862746" alpha="1"/>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedScreenMetrics key="destination" type="retina47"/>
-    </simulatedMetricsContainer>
+    <color key="tintColor" red="0.0039215686274509803" green="0.12156862745098039" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

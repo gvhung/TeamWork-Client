@@ -50,13 +50,13 @@ namespace TeamWork.iOS.Controllers
 				Font = UIFont.FromName(ItemPriceLabel.Font.Name, 20f)
 			};
 
-			string priceStr = "$" + Product.Price.ToString("0.00");
+			string priceStr = "SEK" + Product.Price.ToString("0.00");
 			NSMutableAttributedString mutablePriceStr = new NSMutableAttributedString(priceStr);
 
-			mutablePriceStr.SetAttributes(smallAttributes.Dictionary, new NSRange(0, 1));
-			mutablePriceStr.SetAttributes(smallAttributes.Dictionary, new NSRange(priceStr.Length - 3, 3));
+            mutablePriceStr.SetAttributes(smallAttributes.Dictionary, new NSRange(0, 3));
+            mutablePriceStr.SetAttributes(smallAttributes.Dictionary, new NSRange(priceStr.Length - 3, 3));
 
-			ItemPriceLabel.AttributedText = mutablePriceStr;
+            ItemPriceLabel.AttributedText = mutablePriceStr;
         }
 
         private async void OnStartSaleRequested(object sender, EventArgs e)
