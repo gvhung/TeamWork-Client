@@ -28,7 +28,7 @@ namespace TeamWork.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel ItemPriceLabel { get; set; }
+        UIKit.UILabel ItemSupplierLabel { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
@@ -47,9 +47,9 @@ namespace TeamWork.iOS
                 ItemNameLabel = null;
             }
 
-            if (ItemPriceLabel != null) {
-                ItemPriceLabel.Dispose ();
-                ItemPriceLabel = null;
+            if (ItemSupplierLabel != null) {
+                ItemSupplierLabel.Dispose ();
+                ItemSupplierLabel = null;
             }
         }
     }

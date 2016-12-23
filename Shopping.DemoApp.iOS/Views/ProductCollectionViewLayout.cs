@@ -30,7 +30,7 @@ namespace TeamWork.iOS
 
             contentWidth = CollectionView.Frame.Width;
             nfloat columnWidth = contentWidth / NumberOfColumns;
-            nfloat height = columnWidth * 1.25f; // Our cells height is a 25% greater than their width
+            nfloat height = columnWidth * 0.75f; // Our cells height is a 25% greater than their width
 
             for (int i = 0; i < columnsXOffset.Length; i++)
             {

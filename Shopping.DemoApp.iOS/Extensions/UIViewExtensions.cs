@@ -48,7 +48,7 @@ namespace TeamWork.iOS.Extensions
             else
             {
                 var url = new NSUrl(Product.ImageUrl);
-                imageView.SetImage(url);
+                imageView.SetImage(url);                
             }
         }
 
