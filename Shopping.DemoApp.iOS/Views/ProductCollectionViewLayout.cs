@@ -14,7 +14,7 @@ namespace TeamWork.iOS
         private List<UICollectionViewLayoutAttributes> calculatedAttributes = new List<UICollectionViewLayoutAttributes>();
         private nfloat contentWidth = 0f;
         private nfloat contentHeight = 0f;
-        private nfloat buttonHeight = 60f;
+       
 
         private nfloat[] columnsXOffset = new nfloat[NumberOfColumns];
         private nfloat[] columnsYOffset = new nfloat[NumberOfColumns];
@@ -40,13 +40,7 @@ namespace TeamWork.iOS
             for (int i = 0; i < columnsYOffset.Length; i++)
             {
                 columnsYOffset[i] = 0;
-            }
-
-            //UICollectionViewLayoutAttributes attribute1 = UICollectionViewLayoutAttributes.CreateForCell(NSIndexPath.FromItemSection(0, 0));
-            //attribute1.Frame = new CGRect(columnsXOffset[1], 0, columnWidth, buttonHeight);
-            //calculatedAttributes.Add(attribute1);
-
-            //columnsYOffset[1] = buttonHeight; // Second column has a vertical offset (due to sell button height)
+            }            
 
             int column = 0;
             for (int i = 0; i < CollectionView.NumberOfItemsInSection(1); i++)
