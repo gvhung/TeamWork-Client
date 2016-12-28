@@ -112,7 +112,7 @@ namespace TeamWork.iOS.Controllers
 					Price = price
 				};
 
-				await ProductDataService.Instance.AddItemAsync(Product, photoFile.Path);
+				//await AzureService.Instance.ProductManager.AddItemAsync(Product, photoFile.Path);
 
 				UserDialogs.Instance.HideLoading();
 				NavigationController.PopViewController(true);

@@ -105,33 +105,35 @@ namespace TeamWork.iOS.Controllers
 			ProductSource.ProductelectedCallback = OnProductelected;
             ProductCollectionView.Source = ProductSource;
 
-			await ProductDataService.Instance.Initialize();
+			//await ProductDataService.Instance.Initialize();
+            
 
-			// As each item image download may occur after its cell is loaded,
-			// we should reload it when that download is completed
-			ProductDataService.Instance.MobileService.EventManager
-								   .Subscribe<FileDownloadedEvent>(file =>
-				{
-					ProductCollectionView.BeginInvokeOnMainThread(() =>
-					{
-						var targetCell = ProductCollectionView.VisibleCells
-																.OfType<ProductViewCell>()
-																.FirstOrDefault(c => c.ItemId == file.Name);
+            // As each item image download may occur after its cell is loaded,
+            // we should reload it when that download is completed
+    //        ProductDataService.Instance.MobileService.EventManager
+				//				   .Subscribe<FileDownloadedEvent>(file =>
+				//{
+				//	ProductCollectionView.BeginInvokeOnMainThread(() =>
+				//	{
+				//		var targetCell = ProductCollectionView.VisibleCells
+				//												.OfType<ProductViewCell>()
+				//												.FirstOrDefault(c => c.ItemId == file.Name);
 
-						if (targetCell != null)
-						{
-							NSIndexPath path = ProductCollectionView.IndexPathForCell(targetCell);
-							ProductCollectionView.ReloadItems(new[] { path });
-						}
-					});
-				});
+				//		if (targetCell != null)
+				//		{
+				//			NSIndexPath path = ProductCollectionView.IndexPathForCell(targetCell);
+				//			ProductCollectionView.ReloadItems(new[] { path });
+				//		}
+				//	});
+				//});
         }
 
 		private async Task LoadProduct()
         {
             UserDialogs.Instance.ShowLoading("Loading...");
 
-            IEnumerable<Product> data = await ProductDataService.Instance.GetProduct();
+            //IEnumerable<Product> data = await ProductDataService.Instance.GetProduct();
+            var data = await AzureService.Instance.ProductManager.GetItemsAsync(true);
             ProductSource.Items = data;
             ProductCollectionView.ReloadData();
 

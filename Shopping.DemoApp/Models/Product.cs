@@ -3,12 +3,9 @@
     using System;
     using System.Collections.Generic;
 
-    public class Product
+    public class Product : BaseModel
     {
-        public string Id { get; set; }
-
-        public DateTimeOffset? CreatedAt { get; set; }
-
+        
         public string Name { get; set; }
 
         public string Description { get; set; }

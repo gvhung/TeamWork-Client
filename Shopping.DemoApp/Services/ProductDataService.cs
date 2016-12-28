@@ -15,7 +15,7 @@
 
     public class ProductDataService
     {
-        private IMobileServiceSyncTable<Product> ProductTable;
+        private IMobileServiceTable<Product> ProductTable;
         private static ProductDataService instance = new ProductDataService();
 
         public static ProductDataService Instance
@@ -42,52 +42,52 @@
             this.MobileService.SerializerSettings.Converters.Add(new MobileServiceFileJsonConverter(this.MobileService));
 
             //setup our local sqlite store and intialize our table
-            var store = new MobileServiceSQLiteStore(path);
-            store.DefineTable<Product>();
+            //var store = new MobileServiceSQLiteStore(path);
+            //store.DefineTable<Product>();
 
             //Get our sync table that will call out to azure
-            this.ProductTable = this.MobileService.GetSyncTable<Product>();
+            this.ProductTable = this.MobileService.GetTable<Product>();
 
             // Add images handler
-            this.MobileService.InitializeFileSyncContext(new ImagesFileSyncHandler(this.ProductTable), store);
+            //this.MobileService.InitializeFileSyncContext(new ImagesFileSyncHandler(this.ProductTable), store);
 
             //await this.MobileService.SyncContext.InitializeAsync(store, StoreTrackingOptions.NotifyLocalAndServerOperations);
-            await this.MobileService.SyncContext.InitializeAsync(store, StoreTrackingOptions.None);
+            //await this.MobileService.SyncContext.InitializeAsync(store, StoreTrackingOptions.None);
 
         }
 
         public async Task<IEnumerable<Product>> GetProduct()
         {
-            await this.SyncProduct();
+            //await this.SyncProduct();
 
             return await this.ProductTable.OrderByDescending(c => c.CreatedAt).ToEnumerableAsync();
         }
 
-        public async Task SyncProduct()
-        {
-            try
-            {
-                await MobileService.SyncContext.PushAsync();
-                await ProductTable.PushFileChangesAsync();
+        //public async Task SyncProduct()
+        //{
+        //    try
+        //    {
+        //        await MobileService.SyncContext.PushAsync();
+        //        //await ProductTable.PushFileChangesAsync();
 
-                await ProductTable.PullAsync("allProduct", this.ProductTable.CreateQuery());
-            }
+        //        await ProductTable.PullAsync("allProduct", this.ProductTable.CreateQuery());
+        //    }
 
-            catch (Exception e)
-            {
-                Debug.WriteLine(@"Sync Failed: {0}", e.Message);
-            }
-        }
+        //    catch (Exception e)
+        //    {
+        //        Debug.WriteLine(@"Sync Failed: {0}", e.Message);
+        //    }
+        //}
 
 
         public async Task AddItemAsync(Product item, string imagePath)
         {
             await ProductTable.InsertAsync(item);
 
-            string targetPath = await FileHelper.CopyProductFileAsync(item.Id, imagePath);
-            await ProductTable.AddFileAsync(item, Path.GetFileName(targetPath));
+            //string targetPath = await FileHelper.CopyProductFileAsync(item.Id, imagePath);
+            //await ProductTable.AddFileAsync(item, Path.GetFileName(targetPath));
 
-            await SyncProduct();
+            //await SyncProduct();
         }
 
         public async Task<MobileServiceFile> GetItemPhotoAsync(Product item)
