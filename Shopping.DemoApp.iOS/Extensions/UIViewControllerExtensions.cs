@@ -16,7 +16,7 @@ namespace TeamWork.iOS.Extensions
 			logoView.Frame = titleView.Bounds;
 			titleView.AddSubview(logoView);
 
-			controller.NavigationItem.TitleView = titleView;
+			//controller.NavigationItem.TitleView = titleView;
 		}
 	}
 }

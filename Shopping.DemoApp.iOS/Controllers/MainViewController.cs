@@ -130,7 +130,7 @@ namespace TeamWork.iOS.Controllers
 
 		private async Task LoadProduct()
         {
-            UserDialogs.Instance.ShowLoading("Loading...");
+            UserDialogs.Instance.ShowLoading("Laddar...");
 
             //IEnumerable<Product> data = await ProductDataService.Instance.GetProduct();
             var data = await AzureService.Instance.ProductManager.GetItemsAsync(true);
@@ -157,7 +157,7 @@ namespace TeamWork.iOS.Controllers
 
         private async void OnSellRequested()
         {
-			var login = await AuthenticationService.Instance.RequestLoginIfNecessary();
+			await AuthenticationService.Instance.RequestLoginIfNecessary();
 
             if (AuthenticationService.Instance.UserIsAuthenticated)
             {                
