@@ -26,7 +26,7 @@ namespace TeamWork
 			//LeagueManager = new LeagueManager();
 			//MembershipManager = new MembershipManager();
 			ProductManager = new ProductManager();
-			//ChallengeManager = new ChallengeManager();
+            AuthManager = new AuthManager();
 			//GameResultManager = new GameResultManager();
 		}
 
@@ -39,6 +39,11 @@ namespace TeamWork
         //}
 
         public ProductManager ProductManager
+        {
+            get;
+            private set;
+        }
+        public AuthManager AuthManager
         {
             get;
             private set;
@@ -92,9 +97,11 @@ namespace TeamWork
 			}			
 		}
 
-		#endregion
+        
 
-		public async Task<bool> SyncAllAsync()
+        #endregion
+
+        public async Task<bool> SyncAllAsync()
 		{
 			var list = new List<Task<bool>>();
 

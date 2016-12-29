@@ -28,7 +28,7 @@ namespace TeamWork.iOS.Controllers
 
         private void CustomizeNavigationBar()
         {
-            if (AuthenticationService.Instance.UserIsAuthenticated)
+            if (AzureService.Instance.AuthManager.UserIsAuthenticated)
             {
                 NavigationItem.RightBarButtonItem =
                 new UIBarButtonItem(UIBarButtonSystemItem.Edit, delegate
@@ -61,13 +61,13 @@ namespace TeamWork.iOS.Controllers
 
         private async void OnStartSaleRequested(object sender, EventArgs e)
         {
-            if (AuthenticationService.Instance.UserIsAuthenticated)
+            if (AzureService.Instance.AuthManager.UserIsAuthenticated)
             {
-                await ProductDataService.Instance.StartSale(Product);
+                await AzureService.Instance.ProductManager.StartSale(Product);
             }
             else
             {
-                await AuthenticationService.Instance.RequestLoginIfNecessary("För att kunna starta försäljning måste du vara inloggad");
+                await AzureService.Instance.AuthManager.RequestLoginIfNecessary("För att kunna starta försäljning måste du vara inloggad");
             }           
         }
     }

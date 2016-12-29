@@ -59,7 +59,7 @@ namespace TeamWork.iOS.Controllers
             });
 
             var spacer = new UIBarButtonItem(UIBarButtonSystemItem.FlexibleSpace) { Width = 50 };
-            if (AuthenticationService.Instance.UserIsAuthenticated)
+            if (AzureService.Instance.AuthManager.UserIsAuthenticated)
             {
                 var pauseButton = new UIBarButtonItem(UIBarButtonSystemItem.Camera, async delegate
                 {
@@ -80,7 +80,7 @@ namespace TeamWork.iOS.Controllers
                 {
                     bool confirmed = await UserDialogs.Instance.ConfirmAsync("Logga ut:).", okText: "Let's do it!");
                     if (confirmed)
-                        AuthenticationService.Instance.LogOut();
+                        AzureService.Instance.AuthManager.LogOut();
 
                 });
                 this.SetToolbarItems(new UIBarButtonItem[] { spacer, pauseButton }, false);
@@ -131,12 +131,9 @@ namespace TeamWork.iOS.Controllers
 		private async Task LoadProduct()
         {
             UserDialogs.Instance.ShowLoading("Laddar...");
-
-            //IEnumerable<Product> data = await ProductDataService.Instance.GetProduct();
             var data = await AzureService.Instance.ProductManager.GetItemsAsync(true);
             ProductSource.Items = data;
             ProductCollectionView.ReloadData();
-
             UserDialogs.Instance.HideLoading();
         }
 
@@ -157,9 +154,9 @@ namespace TeamWork.iOS.Controllers
 
         private async void OnSellRequested()
         {
-			await AuthenticationService.Instance.RequestLoginIfNecessary();
+			await AzureService.Instance.AuthManager.RequestLoginIfNecessary();
 
-            if (AuthenticationService.Instance.UserIsAuthenticated)
+            if (AzureService.Instance.AuthManager.UserIsAuthenticated)
             {                
                 UIViewController controller = Storyboard.InstantiateViewController(nameof(AddProductViewController));
                 NavigationController.PushViewController(controller, true);
@@ -170,7 +167,6 @@ namespace TeamWork.iOS.Controllers
 		{
 			ProductDetailViewController controller = Storyboard.InstantiateViewController(nameof(ProductDetailViewController)) as ProductDetailViewController;
 			controller.Product = item;
-
 			NavigationController.PushViewController(controller, true);
 		}
     }

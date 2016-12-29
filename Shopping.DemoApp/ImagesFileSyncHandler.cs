@@ -64,8 +64,8 @@
 
             await ProductTable.DownloadFileAsync(file, fullpath);
 
-            await ProductDataService.Instance.MobileService.EventManager
-                                     .PublishAsync(new FileDownloadedEvent { Name = file.ParentId });
+            //await ProductDataService.Instance.MobileService.EventManager
+            //                         .PublishAsync(new FileDownloadedEvent { Name = file.ParentId });
         }
     }
 }
