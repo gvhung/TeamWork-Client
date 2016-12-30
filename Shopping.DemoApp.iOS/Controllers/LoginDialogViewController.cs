@@ -28,8 +28,8 @@ namespace TeamWork.iOS.Controllers
                         loginModel.Password = password.Value;
                         var result = await AzureService.Instance.AuthManager.Login(loginModel);
                         if (result.Success)
-                        {
-
+                        {   
+                            NavigationController.PopViewController(true);                            
                         }
                         else
                         {

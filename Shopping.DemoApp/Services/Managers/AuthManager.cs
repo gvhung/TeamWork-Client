@@ -5,6 +5,7 @@ using System.Net.Http;
 using Microsoft.WindowsAzure.MobileServices;
 using TeamWork.Models;
 using Acr.UserDialogs;
+using TeamWork.iOS.Controllers;
 
 namespace TeamWork
 {
@@ -15,19 +16,24 @@ namespace TeamWork
         public async Task<Models.LoginResult> Login(LoginModel loginModel)
         {
             var result = await AzureService.Instance.Client.InvokeApiAsync<LoginModel, Models.LoginResult>("login", loginModel);
+            if (result.Success)
+            {
+                //mobileUser.MobileServiceAuthenticationToken = result.authenticationToken;
+                UserIsAuthenticated = true;
+            }            
             return result;
 
         }
 
-        public Task<DateTime?> Register(string username, string password)
+        public async Task<Models.LoginResult> Register(LoginModel loginModel)
         {
-            return new Task<DateTime?>(() => {
-                var qs = new Dictionary<string, string>();
-                qs.Add("email", username);
-                qs.Add("password", password);
-                var dateTime = AzureService.Instance.Client.InvokeApiAsync("Register", null, HttpMethod.Post, qs).Result;
-                return (DateTime)dateTime.Root;
-            });
+            var result = await AzureService.Instance.Client.InvokeApiAsync<LoginModel, Models.LoginResult>("register", loginModel);
+            if (result.Success)
+            {
+                mobileUser.MobileServiceAuthenticationToken = result.authenticationToken;
+                UserIsAuthenticated = true;
+            }
+            return result;
         }
 
         public async Task<bool> RequestLoginIfNecessary(string message = "För att kunna göra det här måste du vara inloggad")
@@ -72,7 +78,7 @@ namespace TeamWork
             }
 
             return AzureService.Instance.Client.LoginAsync(vc, provider);
-        }
+      }
 
         internal void LogOut()
         {

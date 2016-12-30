@@ -21,6 +21,10 @@ namespace TeamWork.iOS.Controllers
 		{
 		}
 
+        public override void ReloadInputViews()
+        {
+            base.ReloadInputViews();
+        }
         public async override void ViewDidLoad ()
         {
             base.ViewDidLoad();
@@ -78,7 +82,7 @@ namespace TeamWork.iOS.Controllers
             {
                 var loginButton = new UIBarButtonItem(UIBarButtonSystemItem.Action, delegate
                 {
-                    UIViewController controller = new LoginDialogViewController();
+                    LoginDialogViewController controller = new LoginDialogViewController();
                     NavigationController.PushViewController(controller, true);
 
                 });
