@@ -6,6 +6,7 @@ using UIKit;
 using MonoTouch.Dialog;
 using Acr.UserDialogs;
 using TeamWork.Models;
+using Foundation;
 
 namespace TeamWork.iOS.Controllers
 {
@@ -14,12 +15,15 @@ namespace TeamWork.iOS.Controllers
         public LoginDialogViewController() : base(UITableViewStyle.Grouped, null)
         {
             EntryElement login, password;
+            var emailLabel = new NSString("E-post", NSStringEncoding.UTF8);
+            var passwordLabel = new NSString("Lösenord", NSStringEncoding.UTF8);
+            var userInfoLabel = new NSString("Användaruppgifter", NSStringEncoding.UTF8);
 
             Root = new RootElement("Logga in")
             {
-               new Section ("Användaruppgifter"){
-                  (login = new EntryElement ("E-post", "andreas.wahlgren@consid.se", "andreas.wahlgren@consid.se")),
-                  (password = new EntryElement ("Lösenord", "Zaq1xsw2", "Zaq1xsw2", true))
+               new Section (userInfoLabel){
+                  (login = new EntryElement (emailLabel, "andreas.wahlgren@consid.se", "andreas.wahlgren@consid.se")),
+                  (password = new EntryElement (passwordLabel, "Zaq1xsw2", "Zaq1xsw2", true))
                  },
                   new Section () {
                     new StringElement ("Login", async delegate{
@@ -28,8 +32,8 @@ namespace TeamWork.iOS.Controllers
                         loginModel.Password = password.Value;
                         var result = await AzureService.Instance.AuthManager.Login(loginModel);
                         if (result.Success)
-                        {   
-                            NavigationController.PopViewController(true);                            
+                        {
+                            NavigationController.PopToRootViewController(true);
                         }
                         else
                         {
