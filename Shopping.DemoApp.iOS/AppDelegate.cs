@@ -3,6 +3,7 @@ using System;
 using UIKit;
 using WindowsAzure.Messaging;
 using Acr.UserDialogs;
+using MonoTouch.Dialog;
 
 namespace TeamWork.iOS
 {
@@ -12,6 +13,7 @@ namespace TeamWork.iOS
 	public class AppDelegate : UIApplicationDelegate
 	{
         private SBNotificationHub notificationHub;
+        //EntryElement login, password;
 
         public override UIWindow Window {
 			get;

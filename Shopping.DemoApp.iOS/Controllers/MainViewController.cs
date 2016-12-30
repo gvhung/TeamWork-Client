@@ -76,14 +76,13 @@ namespace TeamWork.iOS.Controllers
             }
             else
             {
-                var pauseButton = new UIBarButtonItem(UIBarButtonSystemItem.Action, async delegate
+                var loginButton = new UIBarButtonItem(UIBarButtonSystemItem.Action, delegate
                 {
-                    bool confirmed = await UserDialogs.Instance.ConfirmAsync("Logga ut:).", okText: "Let's do it!");
-                    if (confirmed)
-                        AzureService.Instance.AuthManager.LogOut();
+                    UIViewController controller = new LoginDialogViewController();
+                    NavigationController.PushViewController(controller, true);
 
                 });
-                this.SetToolbarItems(new UIBarButtonItem[] { spacer, pauseButton }, false);
+                this.SetToolbarItems(new UIBarButtonItem[] { spacer, loginButton }, false);
             }
 
             NavigationItem.RightBarButtonItem = refreshButton;

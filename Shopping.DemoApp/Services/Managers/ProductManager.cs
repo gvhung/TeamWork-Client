@@ -14,14 +14,9 @@ namespace TeamWork
 	{
 		public override string Identifier => "Product";
 
-        public Task<DateTime?> StartSale(Product product)
+        internal async Task<Product> StartSale(Product product)
         {
-            return new Task<DateTime?>(() => {
-                var qs = new Dictionary<string, string>();
-                qs.Add("id", product.Id);
-                var dateTime = AzureService.Instance.Client.InvokeApiAsync("StartSale", null, HttpMethod.Post, qs).Result;
-                return (DateTime)dateTime.Root;
-            });
+            return await AzureService.Instance.Client.InvokeApiAsync<Product, Product>("StartSale", product);
         }
     }
 }

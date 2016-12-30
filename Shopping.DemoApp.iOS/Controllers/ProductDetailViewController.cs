@@ -63,12 +63,12 @@ namespace TeamWork.iOS.Controllers
         {
             if (AzureService.Instance.AuthManager.UserIsAuthenticated)
             {
-                await AzureService.Instance.ProductManager.StartSale(Product);
+                var buySucceeded = await AzureService.Instance.ProductManager.StartSale(Product);
             }
             else
             {
-                await AzureService.Instance.AuthManager.RequestLoginIfNecessary("För att kunna starta försäljning måste du vara inloggad");
-            }           
+                await AzureService.Instance.AuthManager.RequestLoginIfNecessary(new NSString("För att kunna starta försäljning måste du vara inloggad", NSStringEncoding.UTF8));
+            }
         }
     }
 }

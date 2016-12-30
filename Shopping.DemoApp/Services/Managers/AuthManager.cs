@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using Microsoft.WindowsAzure.MobileServices;
+using TeamWork.Models;
 using Acr.UserDialogs;
 
 namespace TeamWork
@@ -11,15 +12,11 @@ namespace TeamWork
 	{
         public bool UserIsAuthenticated { get; private set; }
         MobileServiceUser mobileUser = null;
-        public Task<DateTime?> Login(string username, string password)
+        public async Task<Models.LoginResult> Login(LoginModel loginModel)
         {
-            return new Task<DateTime?>(() => {
-                var qs = new Dictionary<string, string>();
-                qs.Add("email", username);
-                qs.Add("password", password);
-                var dateTime = AzureService.Instance.Client.InvokeApiAsync("Login", null, HttpMethod.Post, qs).Result;
-                return (DateTime)dateTime.Root;
-            });
+            var result = await AzureService.Instance.Client.InvokeApiAsync<LoginModel, Models.LoginResult>("login", loginModel);
+            return result;
+
         }
 
         public Task<DateTime?> Register(string username, string password)

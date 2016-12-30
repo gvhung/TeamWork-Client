@@ -115,6 +115,7 @@
       <HintPath>..\packages\modernhttpclient.2.4.2\lib\Xamarin.iOS10\ModernHttpClient.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MonoTouch.Dialog-1" />
     <Reference Include="Plugin.Connectivity, Version=2.2.12.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xam.Plugin.Connectivity.2.2.12\lib\Xamarin.iOS10\Plugin.Connectivity.dll</HintPath>
       <Private>True</Private>
@@ -234,6 +235,7 @@
     <Compile Include="Controllers\AddProductViewController.designer.cs">
       <DependentUpon>AddProductViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\LoginDialogViewController.cs" />
     <Compile Include="Controllers\RatingMainViewController.cs" />
     <Compile Include="Controllers\RatingMainViewController.designer.cs">
       <DependentUpon>RatingMainViewController.cs</DependentUpon>

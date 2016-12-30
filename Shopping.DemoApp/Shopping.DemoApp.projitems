@@ -15,6 +15,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\BaseModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\BaseNotify.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\IDirty.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\LoginResult.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\OrderItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\UserAccount.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Supplier.cs" />
