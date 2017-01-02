@@ -82,7 +82,7 @@ namespace TeamWork.iOS.Controllers
             {
                 var loginButton = new UIBarButtonItem(UIBarButtonSystemItem.Action, delegate
                 {
-                    LoginDialogViewController controller = new LoginDialogViewController();
+                    UIViewController controller = Storyboard.InstantiateViewController(nameof(AuthController));
                     NavigationController.PushViewController(controller, true);
 
                 });

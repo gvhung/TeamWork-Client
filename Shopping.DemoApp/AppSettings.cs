@@ -2,7 +2,7 @@
 {
     public static class AppSettings
     {
-        public const string ApiAddress = "https://teamworkservice.azurewebsites.net/";
+        public const string ApiAddress = "https://teamworkbackend.azurewebsites.net/";
         public const string NotificationHubConnectionString = "ENTER_YOUR_NOTIFICATION_HUB_CONNECTION_STRING_HERE";
         public const string NotificationHubPath = "ENTER_YOUR_NOTIFICATION_HUB_PATH_HERE";
         public const string EmotionApiKey = "6057ad581e854f70a612700b95f13bff";

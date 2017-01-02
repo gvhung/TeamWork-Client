@@ -231,6 +231,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthController.cs" />
+    <Compile Include="AuthController.designer.cs">
+      <DependentUpon>AuthController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\AddProductViewController.cs" />
     <Compile Include="Controllers\AddProductViewController.designer.cs">
       <DependentUpon>AddProductViewController.cs</DependentUpon>

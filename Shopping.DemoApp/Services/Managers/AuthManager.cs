@@ -66,7 +66,7 @@ namespace TeamWork
             return UserIsAuthenticated;
         }
 
-        private Task<MobileServiceUser> LoginWithProviderAsync(MobileServiceAuthenticationProvider provider)
+        private async Task<MobileServiceUser> LoginWithProviderAsync(MobileServiceAuthenticationProvider provider)
         {
             var window = UIKit.UIApplication.SharedApplication.KeyWindow;
             var vc = window.RootViewController;
@@ -77,7 +77,7 @@ namespace TeamWork
                 vc = vc.PresentedViewController;
             }
 
-            return AzureService.Instance.Client.LoginAsync(vc, provider);
+            return await AzureService.Instance.Client.LoginAsync(vc, provider);
       }
 
         internal void LogOut()
